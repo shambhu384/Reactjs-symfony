@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block body %}
+
+<div class="container mx-auto">
+
+    <div  id="div-wrapper">
+    </div>
+
+    <div class="box-border h-20 w-32 p-4 border-4 border-gray-400 bg-gray-200">
+        <div class="h-full w-full bg-gray-400"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+     <script>
+        window.REP_LOG_APP_PROPS = {{ items|json_encode|raw }};
+     </script>
+     {{ parent() }}
+{{ encore_entry_script_tags('admin') }}
+{% endblock %}
